@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KALOS</title>
+  <link rel="stylesheet" href="../CSS/Home Page.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">KALOS</div>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Our Collection</a></li>
+        <li><a href="#">New Collection</a></li>
+        <li><a href="#">Sale</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="../../asset/FotoModel.jpg" alt="Hero Image">
+    <div class="hero-text fade-in">
+      <h1>SEE OUR BRAND NEW COLLECTION</h1>
+      <a href="#" class="btn hover-grow">See More</a>
+    </div>
+  </section>
+
+  <section class="products film-strip-top film-strip-bottom">
+    <h2 class="section-title fade-in">READY-TO-WEAR</h2>
+    <div class="product-grid">
+      <div class="product-card hover-up fade-in">
+        <img src="../../asset/baju1.png" alt="Baju">
+        <h3>BAJU</h3>
+        <a href="#" class="see-more">See more →</a>
+      </div>
+      <div class="product-card hover-up fade-in" style="transition-delay: 0.1s;">
+        <img src="../../asset/baju 2.png" alt="Baju">
+        <h3>BAJU</h3>
+        <a href="#" class="see-more">See more →</a>
+      </div>
+      <div class="product-card hover-up fade-in" style="transition-delay: 0.2s;">
+        <img src="../../asset/baju 3.png" alt="Baju">
+        <h3>BAJU</h3>
+        <a href="#" class="see-more">See more →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quality film-strip-top film-strip-bottom">
+    <h2 class="section-title quality-title fade-in">UNMATCHED QUALITY</h2>
+    <div class="quality-content fade-in" style="transition-delay: 0.1s;">
+      <img src="../../asset/unmatchedQuality.jpg" alt="Quality Baju">
+      <a href="#" class="btn hover-grow">SEE MORE</a>
+    </div>
+  </section>
+
+  <section class="about fade-in">
+    <div class="about-content">
+        <div class="about-img">
+          <img src="assets/kalos-face.png" alt="Meet Kalos">
+        </div>
+        <div class="about-text">
+          <h2>MEET KALOS</h2>
+          <p>KALOS can help users choose their daily outfits by analyzing photos of themselves and their wardrobe. By uploading a picture, the AI detects features such as skin tone, body shape, and clothing style, then provides personalized outfit recommendations for different occasions...</p>
+          <a href="#" class="btn hover-grow">Meet Kalos</a>
+        </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <h1>KALOS</h1>
+  </footer>
+
+  <script>
+    // Scroll Animation
+    const fadeEls = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      rootMargin: '0px',
+      threshold: 0.1 // Mulai tampil saat 10% elemen terlihat
+    });
+
+    fadeEls.forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

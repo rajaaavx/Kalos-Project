@@ -1,0 +1,328 @@
+/* Warna Dasar */
+:root {
+  --color-primary: #3d2b1f; /* Cokelat Tua */
+  --color-secondary: #8b5e3c; /* Cokelat Sedang (untuk hover/link) */
+  --color-background-light: #f9f5ee; /* Krem Sangat Muda */
+  --color-background-dark: #2a1a0a; /* Cokelat Gelap untuk Footer */
+  --color-text: #333;
+  --color-white: #fff;
+}
+
+/* Reset dan Efek Vintage Grain */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-background-light);
+  color: var(--color-text);
+  /* Efek Grainy/Noise untuk nuansa vintage */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgpzTzAAAAGUlEQVQImWNgYGD4TwR/gQkE/4Qn/E+ADAAj+Qd6U+r0DAAAAABJRU5ErkJggg==');
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: var(--color-background-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.3s, transform 0.2s;
+}
+.nav-links a:hover {
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden; /* Penting untuk menjaga gambar tetap di dalam */
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Filter untuk kesan foto vintage */
+  filter: sepia(0.2) brightness(0.9) contrast(1.1);
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3); /* Sedikit blur untuk kontras */
+  border-radius: 5px;
+}
+.hero h1 {
+  font-family: 'Abril Fatface', 'Arial Black', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Ukuran responsif */
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  will-change: transform, background;
+}
+.hover-grow:hover {
+  background: var(--color-secondary);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Section Umum */
+.section-title {
+  font-family: 'Abril Fatface', 'Arial Black', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 40px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+/* Products (READY-TO-WEAR) */
+.products {
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  background: var(--color-background-dark); /* Latar belakang cokelat gelap */
+  color: var(--color-white);
+  overflow: hidden;
+}
+.products .section-title {
+    color: var(--color-white);
+}
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.product-card {
+  background: var(--color-background-light);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 250px;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s;
+}
+.product-card h3 {
+    color: var(--color-primary);
+    margin: 10px 0;
+}
+.hover-up:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.see-more {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+.see-more:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Film Strip Effect (Pita Film) */
+.film-strip-top::before, .film-strip-bottom::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 15px; /* Tinggi pita film */
+    background: var(--color-primary);
+    /* Membuat lubang-lubang film reel menggunakan gradient */
+    background-image: 
+        radial-gradient(circle at 7px 50%, transparent 4px, var(--color-primary) 4px),
+        repeating-linear-gradient(90deg, 
+            var(--color-primary) 0, var(--color-primary) 20px, 
+            transparent 20px, transparent 30px
+        ),
+        radial-gradient(circle at 7px 50%, var(--color-white) 3px, transparent 3px);
+
+    background-size: 30px 15px, 30px 15px, 30px 15px;
+    background-repeat: repeat-x;
+}
+.film-strip-top::before {
+    top: 0;
+    transform: translateY(-100%); /* Posisi di atas section */
+}
+.film-strip-bottom::after {
+    bottom: 0;
+    transform: translateY(100%); /* Posisi di bawah section */
+}
+
+/* Quality */
+.quality {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--color-background-light);
+  position: relative;
+  overflow: hidden;
+}
+.quality-title {
+  margin-bottom: 20px;
+}
+.quality-content {
+    background: var(--color-background-dark);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    display: inline-block;
+}
+.quality-content img {
+  max-width: 300px;
+  margin: 20px 0;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.quality-content .btn {
+    display: block;
+}
+
+/* About (MEET KALOS) */
+.about {
+  padding: 80px 20px;
+  background: var(--color-background-dark);
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-img img {
+  max-width: 250px;
+  border-radius: 50%; /* Membuat gambar kalos-face.png berbentuk lingkaran */
+  border: 10px solid var(--color-background-light); /* Garis tepi tebal */
+  box-shadow: 0 0 0 15px var(--color-primary), 0 15px 30px rgba(0,0,0,0.3);
+  transition: transform 0.5s;
+}
+.about-img img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+.about-text {
+  max-width: 500px;
+  color: var(--color-background-light);
+}
+.about-text h2 {
+  font-family: 'Abril Fatface', 'Arial Black', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 20px;
+  color: var(--color-white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.about-text p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-primary);
+  text-align: center;
+  color: var(--color-white);
+  padding: 40px 0;
+  box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
+}
+.footer h1 {
+  font-family: 'Abril Fatface', 'Arial Black', sans-serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  letter-spacing: 5px;
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+}
+
+/* Animasi Scroll (Fade In) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Efek Hover untuk Card */
+.hover-up {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hover-up:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .product-grid {
+        gap: 20px;
+    }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .about-img img {
+        max-width: 180px;
+    }
+    .about-text {
+        max-width: 100%;
+    }
+}
